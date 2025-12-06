@@ -1,20 +1,20 @@
+import "./HomePage.css";
 import ProfileImage from '@/Image/home_icon.png';
 import {SkillsSection} from '../SkillComponents/SkillsSection';
 
 export const HomePage = () => {
   return (
     <div className="container text-center" aline-item="center">
+      <img src={ProfileImage} className="ProfileImage" alt="プロフィール画像"/>
       <h1>Ra1to code</h1>
 
-      <img src={ProfileImage} className="ProfileImage" alt="プロフィール画像"/>
-
       <p>
-        Ra1to codeです。普段は個人でプログラミングをYoutubeや書籍にて学習してます。<br/>
-        主にHTML/CSS/Javascriptをメインに扱っており、次はGoとPythonを学習する予定です。<br/>
+        Ra1to codeです。普段は個人でYoutubeや書籍にてプログラミングを学習してます。<br/>
+        主にReactをメインに扱っており、並行してGoとLinuxを学習。<br/>
         趣味は筋トレです。（最近増量を頑張ってます、しんどいです）
       </p>
 
-      <section className="page-section" id="services">
+      <section>
         <div className="service">
           <div className="text-center">
             <h2 className="section-heading text-uppercase">My Project</h2>
@@ -59,7 +59,7 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className="page-section" id="services">
+      <section>
       </section>
         <SkillsSection />
     </div>
