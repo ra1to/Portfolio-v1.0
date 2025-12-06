@@ -10,10 +10,12 @@ function App () {
     <BrowserRouter>
         <div className="App">
         <Header />
-          <Routes>
-            <Route path="/" element={<HomePage /> } />
-            <Route path="blog" element={<BlogPage />} />
-          </Routes>
+          <main className="pt-28 md:px-12 lg:px-24 max-w-screen-2xl mx-auto">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="blog" element={<BlogPage />} />
+            </Routes>
+          </main>
         </div>
     </BrowserRouter>
   );
