@@ -56,6 +56,22 @@ code {
   body {
     @apply bg-background text-foreground transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
+    background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 20%, #ffccbc 40%, #ffe082 60%, #fff9c4 80%, #fff8e1 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    min-height: 100vh;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   a {

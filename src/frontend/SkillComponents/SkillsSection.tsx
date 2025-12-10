@@ -206,10 +206,10 @@ export const SkillsSection = () => {
         </div>
       </div>
 
-      <div className="container mx-auto max-w-6xl z-10 relative">
+      <div className="container mx-auto max-w-6xl z-10 relative bg-white/20 backdrop-blur-xl rounded-3xl p-8 border border-white/30 shadow-xl">
         <div className="flex flex-col md:flex-row justify-between items-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left" data-aos="fade-right">
-            My <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/70">Technical Skills</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left text-white drop-shadow-lg" data-aos="fade-right">
+            My <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">Technical Skills</span>
           </h2>
         </div>
 
@@ -220,10 +220,10 @@ export const SkillsSection = () => {
               onClick={() => setActiveCategory(category)}
               className={cn(
                 "px-5 py-2.5 rounded-full transition-all duration-300 capitalize",
-                "border shadow-sm text-sm font-medium",
+                "border shadow-sm text-sm font-medium backdrop-blur-md",
                 activeCategory === category
-                  ? "bg-primary text-primary-foreground border-primary shadow-primary/20"
-                  : "bg-card border-border hover:bg-card/80 hover:border-primary/30"
+                  ? "bg-white/40 text-white border-white/50 shadow-lg"
+                  : "bg-white/20 text-white border-white/30 hover:bg-white/30 hover:border-white/40"
               )}
              >
                 
@@ -242,8 +242,8 @@ export const SkillsSection = () => {
                   <div
                     key={`row1-${skill.name}`}
                     className={cn(
-                      "skills-card bg-card border rounded-xl overflow-hidden shadow-md transition-all duration-300 mx-4",
-                      "hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1",
+                      "skills-card bg-white/20 backdrop-blur-md border border-white/30 rounded-xl overflow-hidden shadow-lg transition-all duration-300 mx-4",
+                      "hover:shadow-xl hover:bg-white/30 hover:-translate-y-1",
                       getCategoryStyle(skill.category),
                       selectedSkill?.name === skill.name ? "ring-2 ring-primary" : ""
                     )}
@@ -252,15 +252,15 @@ export const SkillsSection = () => {
                     <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
-                          <i className={`${skill.icon} text-2xl mr-3 text-primary/80`}></i>
-                          <h3 className="font-bold text-lg">{skill.name}</h3>
+                          <i className={`${skill.icon} text-2xl mr-3 text-white/90`}></i>
+                          <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/30 text-white backdrop-blur-sm border border-white/30">
                           {getMasteryLevel(skill.level)}
                         </span>
                       </div>
                       
-                      <div className="relative w-full h-2.5 rounded-full overflow-hidden bg-secondary/50 mb-2">
+                      <div className="relative w-full h-2.5 rounded-full overflow-hidden bg-white/20 mb-2 backdrop-blur-sm border border-white/20">
                         <div
                           style={{ width: `${skill.level}%` }}
                           className={`absolute top-0 left-0 h-full rounded-full bg-linear-to-r ${getProgressColor(skill.level)}`}
@@ -268,10 +268,10 @@ export const SkillsSection = () => {
                       </div>
                       
                       <div className="flex justify-between items-center">
-                        <span className="text-xs font-medium text-muted-foreground">
+                        <span className="text-xs font-medium text-white/80 drop-shadow-sm">
                           {skill.category}
                         </span>
-                        <span className="text-sm font-semibold">
+                        <span className="text-sm font-semibold text-white drop-shadow-md">
                           {skill.level}%
                         </span>
                       </div>
@@ -284,8 +284,8 @@ export const SkillsSection = () => {
                   <div
                     key={`row1-dupe-${skill.name}`}
                     className={cn(
-                      "skills-card bg-card border rounded-xl overflow-hidden shadow-md transition-all duration-300 mx-4",
-                      "hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1",
+                      "skills-card bg-white/20 backdrop-blur-md border border-white/30 rounded-xl overflow-hidden shadow-lg transition-all duration-300 mx-4",
+                      "hover:shadow-xl hover:bg-white/30 hover:-translate-y-1",
                       getCategoryStyle(skill.category)
                     )}
                     onClick={() => handleSkillClick(skill)}
@@ -293,15 +293,15 @@ export const SkillsSection = () => {
                     <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
-                          <i className={`${skill.icon} text-2xl mr-3 text-primary/80`}></i>
-                          <h3 className="font-bold text-lg">{skill.name}</h3>
+                          <i className={`${skill.icon} text-2xl mr-3 text-white/90`}></i>
+                          <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/30 text-white backdrop-blur-sm border border-white/30">
                           {getMasteryLevel(skill.level)}
                         </span>
                       </div>
                       
-                      <div className="relative w-full h-2.5 rounded-full overflow-hidden bg-secondary/50 mb-2">
+                      <div className="relative w-full h-2.5 rounded-full overflow-hidden bg-white/20 mb-2 backdrop-blur-sm border border-white/20">
                         <div
                           style={{ width: `${skill.level}%` }}
                           className={`absolute top-0 left-0 h-full rounded-full bg-linear-to-r ${getProgressColor(skill.level)}`}
@@ -309,10 +309,10 @@ export const SkillsSection = () => {
                       </div>
                       
                       <div className="flex justify-between items-center">
-                        <span className="text-xs font-medium text-muted-foreground">
+                        <span className="text-xs font-medium text-white/80 drop-shadow-sm">
                           {skill.category}
                         </span>
-                        <span className="text-sm font-semibold">
+                        <span className="text-sm font-semibold text-white drop-shadow-md">
                           {skill.level}%
                         </span>
                       </div>
@@ -331,8 +331,8 @@ export const SkillsSection = () => {
                   <div
                     key={`row2-${skill.name}`}
                     className={cn(
-                      "skills-card bg-card border rounded-xl overflow-hidden shadow-md transition-all duration-300 mx-4",
-                      "hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1",
+                      "skills-card bg-white/20 backdrop-blur-md border border-white/30 rounded-xl overflow-hidden shadow-lg transition-all duration-300 mx-4",
+                      "hover:shadow-xl hover:bg-white/30 hover:-translate-y-1",
                       getCategoryStyle(skill.category),
                       selectedSkill?.name === skill.name ? "ring-2 ring-primary" : ""
                     )}
@@ -341,15 +341,15 @@ export const SkillsSection = () => {
                     <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
-                          <i className={`${skill.icon} text-2xl mr-3 text-primary/80`}></i>
-                          <h3 className="font-bold text-lg">{skill.name}</h3>
+                          <i className={`${skill.icon} text-2xl mr-3 text-white/90`}></i>
+                          <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/30 text-white backdrop-blur-sm border border-white/30">
                           {getMasteryLevel(skill.level)}
                         </span>
                       </div>
                       
-                      <div className="relative w-full h-2.5 rounded-full overflow-hidden bg-secondary/50 mb-2">
+                      <div className="relative w-full h-2.5 rounded-full overflow-hidden bg-white/20 mb-2 backdrop-blur-sm border border-white/20">
                         <div
                           style={{ width: `${skill.level}%` }}
                           className={`absolute top-0 left-0 h-full rounded-full bg-linear-to-r ${getProgressColor(skill.level)}`}
@@ -357,10 +357,10 @@ export const SkillsSection = () => {
                       </div>
                       
                       <div className="flex justify-between items-center">
-                        <span className="text-xs font-medium text-muted-foreground">
+                        <span className="text-xs font-medium text-white/80 drop-shadow-sm">
                           {skill.category}
                         </span>
-                        <span className="text-sm font-semibold">
+                        <span className="text-sm font-semibold text-white drop-shadow-md">
                           {skill.level}%
                         </span>
                       </div>
@@ -373,8 +373,8 @@ export const SkillsSection = () => {
                   <div
                     key={`row2-dupe-${skill.name}`}
                     className={cn(
-                      "skills-card bg-card border rounded-xl overflow-hidden shadow-md transition-all duration-300 mx-4",
-                      "hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1",
+                      "skills-card bg-white/20 backdrop-blur-md border border-white/30 rounded-xl overflow-hidden shadow-lg transition-all duration-300 mx-4",
+                      "hover:shadow-xl hover:bg-white/30 hover:-translate-y-1",
                       getCategoryStyle(skill.category)
                     )}
                     onClick={() => handleSkillClick(skill)}
@@ -382,15 +382,15 @@ export const SkillsSection = () => {
                     <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
-                          <i className={`${skill.icon} text-2xl mr-3 text-primary/80`}></i>
-                          <h3 className="font-bold text-lg">{skill.name}</h3>
+                          <i className={`${skill.icon} text-2xl mr-3 text-white/90`}></i>
+                          <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/30 text-white backdrop-blur-sm border border-white/30">
                           {getMasteryLevel(skill.level)}
                         </span>
                       </div>
                       
-                      <div className="relative w-full h-2.5 rounded-full overflow-hidden bg-secondary/50 mb-2">
+                      <div className="relative w-full h-2.5 rounded-full overflow-hidden bg-white/20 mb-2 backdrop-blur-sm border border-white/20">
                         <div
                           style={{ width: `${skill.level}%` }}
                           className={`absolute top-0 left-0 h-full rounded-full bg-linear-to-r ${getProgressColor(skill.level)}`}
@@ -398,10 +398,10 @@ export const SkillsSection = () => {
                       </div>
                       
                       <div className="flex justify-between items-center">
-                        <span className="text-xs font-medium text-muted-foreground">
+                        <span className="text-xs font-medium text-white/80 drop-shadow-sm">
                           {skill.category}
                         </span>
-                        <span className="text-sm font-semibold">
+                        <span className="text-sm font-semibold text-white drop-shadow-md">
                           {skill.level}%
                         </span>
                       </div>
@@ -420,34 +420,34 @@ export const SkillsSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center"
+              className="fixed inset-0 bg-black/40 backdrop-blur-md z-50 flex items-center justify-center"
               onClick={() => setSelectedSkill(null)}
             >
               <motion.div
                 initial={{ scale: 0.9, y: 20 }}
                 animate={{ scale: 1, y: 0 }}
                 exit={{ scale: 0.9, y: 20 }}
-                className="bg-card border rounded-xl p-6 max-w-md w-full mx-4 shadow-lg"
+                className="bg-white/20 backdrop-blur-xl border border-white/30 rounded-xl p-6 max-w-md w-full mx-4 shadow-xl"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 rounded-lg flex items-center justify-center bg-primary/10">
-                    <i className={`${selectedSkill.icon} text-4xl text-primary`}></i>
+                  <div className="w-16 h-16 rounded-lg flex items-center justify-center bg-white/20 backdrop-blur-md border border-white/30">
+                    <i className={`${selectedSkill.icon} text-4xl text-white`}></i>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold">{selectedSkill.name}</h3>
+                    <h3 className="text-2xl font-bold text-white drop-shadow-lg">{selectedSkill.name}</h3>
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-medium text-muted-foreground">
+                      <span className="text-sm font-medium text-white/80 drop-shadow-sm">
                         {selectedSkill.category}
                       </span>
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/30 text-white backdrop-blur-sm border border-white/30">
                         {getMasteryLevel(selectedSkill.level)}
                       </span>
                     </div>
                   </div>
                 </div>
                 
-                <div className="relative w-full h-3 rounded-full overflow-hidden bg-secondary/50 mb-3">
+                <div className="relative w-full h-3 rounded-full overflow-hidden bg-white/20 mb-3 backdrop-blur-sm border border-white/20">
                   <div
                     style={{ width: `${selectedSkill.level}%` }}
                     className={`absolute top-0 left-0 h-full rounded-full bg-linear-to-r ${getProgressColor(selectedSkill.level)}`}
@@ -455,16 +455,16 @@ export const SkillsSection = () => {
                 </div>
                 
                 <div className="text-right mb-4">
-                  <span className="text-lg font-bold">{selectedSkill.level}%</span>
+                  <span className="text-lg font-bold text-white drop-shadow-md">{selectedSkill.level}%</span>
                 </div>
                 
-                <div className="border-t border-border pt-4">
-                  <h4 className="font-medium mb-2">Description</h4>
-                  <p className="text-muted-foreground">{selectedSkill.description}</p>
+                <div className="border-t border-white/30 pt-4">
+                  <h4 className="font-medium mb-2 text-white drop-shadow-md">Description</h4>
+                  <p className="text-white/90 drop-shadow-sm">{selectedSkill.description}</p>
                 </div>
                 
                 <button
-                  className="mt-6 w-full py-2 rounded-md border border-border hover:bg-secondary transition-colors"
+                  className="mt-6 w-full py-2 rounded-md border border-white/30 hover:bg-white/20 transition-colors text-white backdrop-blur-md bg-white/10"
                   onClick={() => setSelectedSkill(null)}
                 >
                   Close
