@@ -78,19 +78,19 @@ export const NoteList = () => {
       
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post) => (
-          <li key={post.link} className="bg-white/60 backdrop-blur-xl rounded-2xl overflow-hidden shadow-lg hover:shadow-xl hover:bg-white/70 transition-all border border-white/50">
+          <li key={post.link} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
             <a
               href={post.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="block h-full no-underline group"
+              className="block h-full no-underline"
             >
               <div className="aspect-video w-full bg-gray-100 relative overflow-hidden">
                 {post.thumbnail ? (
                   <img
                     src={post.thumbnail}
                     alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-[#41C9B4] text-white font-bold text-xl">
@@ -99,11 +99,11 @@ export const NoteList = () => {
                 )}
               </div>
               
-              <div className="p-5">
-                <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2">
+              <div className="p-5 bg-white/60 backdrop-blur-xl border-t border-white/50">
+                <h3 className="text-lg font-bold text-black mb-2 line-clamp-2">
                   {post.title}
                 </h3>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-black">
                   <ConvertDate convertDate={post.pubDate} />
                 </div>
               </div>

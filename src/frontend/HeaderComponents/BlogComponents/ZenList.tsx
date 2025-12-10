@@ -51,14 +51,14 @@ export const ZenList = () => {
           const imageUrl = post.thumbnail || post.enclosure?.link;
 
           return (
-            <li key={post.link} className="bg-white/60 backdrop-blur-xl rounded-2xl overflow-hidden shadow-lg hover:shadow-xl hover:bg-white/70 transition-all border border-white/50">
-              <a href={post.link} target="_blank" rel="noopener noreferrer" className="block h-full no-underline group">
+            <li key={post.link} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+              <a href={post.link} target="_blank" rel="noopener noreferrer" className="block h-full no-underline">
                 <div className="aspect-video w-full bg-gray-100 relative overflow-hidden">
                   {imageUrl ? (
                     <img
                       src={imageUrl}
                       alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-[#3EA8FF] text-white font-bold text-xl">
@@ -66,9 +66,9 @@ export const ZenList = () => {
                     </div>
                   )}
                 </div>
-                <div className="p-5">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2">{post.title}</h3>
-                  <div className="text-sm text-gray-600">
+                <div className="p-5 bg-white/60 backdrop-blur-xl border-t border-white/50">
+                  <h3 className="text-lg font-bold text-black mb-2 line-clamp-2">{post.title}</h3>
+                  <div className="text-sm text-black">
                     <ConvertDate convertDate={post.pubDate} />
                   </div>
                 </div>
