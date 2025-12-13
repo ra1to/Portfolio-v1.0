@@ -5,7 +5,7 @@ const BlogPage = () => {
     return (
     <div>
     <div className="max-w-7xl mx-auto px-4 py-12">
-      <h2 className="text-2xl font-bold mb-8 text-gray-900">個人の呟き</h2>
+      <h2 className="text-2xl font-bold mb-8 text-white">個人の呟き</h2>
     </div>
         <ZenList />
         <NoteList />

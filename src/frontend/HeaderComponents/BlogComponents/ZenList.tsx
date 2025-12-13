@@ -66,10 +66,10 @@ export const ZenList = () => {
                     </div>
                   )}
                 </div>
-                <div className="p-5 bg-white/60 backdrop-blur-xl border-t border-white/50">
+                <div className="p-5 bg-gray-100/90 backdrop-blur-xl border-t border-white/50">
                   <h3 className="text-lg font-bold text-black mb-2 line-clamp-2">{post.title}</h3>
-                  <div className="text-sm text-black">
-                    <ConvertDate convertDate={post.pubDate} />
+                  <div className="text-sm">
+                    <ConvertDate convertDate={post.pubDate} className="text-gray-700" />
                   </div>
                 </div>
               </a>

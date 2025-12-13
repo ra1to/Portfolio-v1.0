@@ -73,7 +73,7 @@ export const NoteList = () => {
   return (
     <div className="w-full">
       <div className="flex items-center gap-2 mb-8">
-        <h2 className="text-2xl font-bold text-gray-900">Note</h2>
+        <h2 className="text-2xl font-bold text-white">Note</h2>
       </div>
       
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -99,12 +99,12 @@ export const NoteList = () => {
                 )}
               </div>
               
-              <div className="p-5 bg-white/60 backdrop-blur-xl border-t border-white/50">
+              <div className="p-5 bg-gray-100/90 backdrop-blur-xl border-t border-white/50">
                 <h3 className="text-lg font-bold text-black mb-2 line-clamp-2">
                   {post.title}
                 </h3>
-                <div className="text-sm text-black">
-                  <ConvertDate convertDate={post.pubDate} />
+                <div className="text-sm">
+                  <ConvertDate convertDate={post.pubDate} className="text-gray-700" />
                 </div>
               </div>
             </a>
