@@ -181,15 +181,6 @@ export const SkillsSection = () => {
     }
   };
 
-  // 習熟度レベルを計算
-  const getMasteryLevel = (level : number) => {
-    if (level >= 90) return "Expert";
-    if (level >= 80) return "Advanced";
-    if (level >= 70) return "Proficient";
-    if (level >= 50) return "Intermediate";
-    return "Beginner";
-  };
-
   return (
     <section ref={sectionRef} id="skills" className="py-24 px-4 relative overflow-hidden" data-aos="fade-up">
       {/* Background pattern */}
@@ -208,30 +199,28 @@ export const SkillsSection = () => {
 
       <div className="container mx-auto max-w-6xl z-10 relative bg-white/20 backdrop-blur-xl rounded-3xl p-8 border border-white/30 shadow-xl">
         <div className="flex flex-col md:flex-row justify-between items-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left text-white drop-shadow-lg" data-aos="fade-right">
-            My <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">Technical Skills</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left text-white drop-shadow-lg ml-[25px]" data-aos="fade-right">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">My Technical Skills</span>
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-16" data-aos="fade-up">
+        <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-16 ml-[25px]" data-aos="fade-up">
           {categories.map((category, index) => (
             <button
               key={index}
               onClick={() => setActiveCategory(category)}
               className={cn(
-                "px-5 py-2.5 rounded-full transition-all duration-300 capitalize",
+                "px-5 py-2.5 rounded-[10px]! transition-all duration-300 capitalize",
                 "border shadow-sm text-sm font-medium backdrop-blur-md",
                 activeCategory === category
                   ? "bg-white/40 text-white border-white/50 shadow-lg"
                   : "bg-white/20 text-white border-white/30 hover:bg-white/30 hover:border-white/40"
               )}
              >
-                
               {category}
             </button>
           ))}
         </div>
-
         {/* Scrolling skills rows */}
         <div className="mb-16 overflow-hidden" data-aos="fade-up">
           {/* First row - scrolling right */}
@@ -255,9 +244,6 @@ export const SkillsSection = () => {
                           <i className={`${skill.icon} text-2xl mr-3 text-white/90`}></i>
                           <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/30 text-white backdrop-blur-sm border border-white/30">
-                          {getMasteryLevel(skill.level)}
-                        </span>
                       </div>
                       
                       <div className="relative w-full h-2.5 rounded-full overflow-hidden bg-white/20 mb-2 backdrop-blur-sm border border-white/20">
@@ -284,6 +270,7 @@ export const SkillsSection = () => {
                   <div
                     key={`row1-dupe-${skill.name}`}
                     className={cn(
+               
                       "skills-card bg-white/20 backdrop-blur-md border border-white/30 rounded-xl overflow-hidden shadow-lg transition-all duration-300 mx-4",
                       "hover:shadow-xl hover:bg-white/30 hover:-translate-y-1",
                       getCategoryStyle(skill.category)
@@ -296,9 +283,6 @@ export const SkillsSection = () => {
                           <i className={`${skill.icon} text-2xl mr-3 text-white/90`}></i>
                           <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/30 text-white backdrop-blur-sm border border-white/30">
-                          {getMasteryLevel(skill.level)}
-                        </span>
                       </div>
                       
                       <div className="relative w-full h-2.5 rounded-full overflow-hidden bg-white/20 mb-2 backdrop-blur-sm border border-white/20">
@@ -344,9 +328,6 @@ export const SkillsSection = () => {
                           <i className={`${skill.icon} text-2xl mr-3 text-white/90`}></i>
                           <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/30 text-white backdrop-blur-sm border border-white/30">
-                          {getMasteryLevel(skill.level)}
-                        </span>
                       </div>
                       
                       <div className="relative w-full h-2.5 rounded-full overflow-hidden bg-white/20 mb-2 backdrop-blur-sm border border-white/20">
@@ -385,9 +366,6 @@ export const SkillsSection = () => {
                           <i className={`${skill.icon} text-2xl mr-3 text-white/90`}></i>
                           <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/30 text-white backdrop-blur-sm border border-white/30">
-                          {getMasteryLevel(skill.level)}
-                        </span>
                       </div>
                       
                       <div className="relative w-full h-2.5 rounded-full overflow-hidden bg-white/20 mb-2 backdrop-blur-sm border border-white/20">
@@ -439,9 +417,6 @@ export const SkillsSection = () => {
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-medium text-white/80 drop-shadow-sm">
                         {selectedSkill.category}
-                      </span>
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/30 text-white backdrop-blur-sm border border-white/30">
-                        {getMasteryLevel(selectedSkill.level)}
                       </span>
                     </div>
                   </div>
