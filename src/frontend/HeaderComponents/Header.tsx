@@ -44,7 +44,7 @@ export const Header = () => {
             onClick={() => navigate(ROUTES.HOME)} 
             className="no-underline! bg-transparent border-none cursor-pointer p-0"
           >
-            <h3 className="font-bold text-2xl text-white">Ra1to</h3>
+            <h3 className="font-bold text-2xl text-black">Ra1to</h3>
           </button>
         </div>
         <nav>
@@ -52,7 +52,7 @@ export const Header = () => {
             <li>
               <button 
                 onClick={() => navigate(ROUTES.HOME)} 
-                className="text-white hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
+                className="text-black hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
               >
                 Home
               </button>
@@ -60,7 +60,7 @@ export const Header = () => {
             <li>
               <button 
                 onClick={() => navigate(ROUTES.BLOG)} 
-                className="text-white hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
+                className="text-black hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
               >
                 Blog
               </button>
@@ -70,7 +70,7 @@ export const Header = () => {
                 href="https://x.com/skyappsfree" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#48b4af]! transition-colors"
+                className="text-black hover:text-[#48b4af]! transition-colors"
               >
                 SNS
               </a>

@@ -221,7 +221,7 @@ export const SkillsSection = () => {
       <div className="container mx-auto max-w-6xl z-10 relative bg-white/20 backdrop-blur-xl rounded-3xl p-8 border border-white/30 shadow-xl">
         <div className="flex flex-col md:flex-row justify-between items-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left text-white drop-shadow-lg ml-[25px]" data-aos="fade-right">
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-white to-white/70">My Technical Skills</span>
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-black to-black/70">My Technical Skills</span>
           </h2>
         </div>
 
@@ -234,8 +234,8 @@ export const SkillsSection = () => {
                 "px-5 py-2.5 rounded-[10px]! transition-all duration-300 capitalize",
                 "border shadow-sm text-sm font-medium backdrop-blur-md",
                 activeCategory === category
-                  ? "bg-white/40 text-white border-white/50 shadow-lg"
-                  : "bg-white/20 text-white border-white/30 hover:bg-white/30 hover:border-white/40"
+                  ? "bg-white text-black border-white/50 shadow-lg"
+                  : "bg-black/20 text-white border-white/30 hover:bg-black/60 hover:border-white/40"
               )}
              >
               {category}
