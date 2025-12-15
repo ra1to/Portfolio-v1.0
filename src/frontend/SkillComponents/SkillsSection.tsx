@@ -3,14 +3,20 @@ import { cn } from "../../lib/utils";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion, AnimatePresence } from "framer-motion";
+import { 
+  HTML5, TypeScript, ReactDark, TailwindCSS, TanStack, 
+  Nodejs,GoDark, Python, Supabase, Git, 
+  Figma, VisualStudioCode, AmazonWebServicesDark, Docker, 
+  Linux, BashDark, Bun , Terraform
+} from "@ridemountainpig/svgl-react";
 
 
 
 interface Skill {
   name: string;
   level: number;
-  category: "Frontend" | "Backend" | "Tools" | "Database"; 
-  icon: string;
+  category: "Frontend" | "Backend" | "Tools"; 
+  icon: React.ElementType;
   description?: string;
 }
 
@@ -21,100 +27,124 @@ const skills :Skill[] = [
     name: "HTML/CSS", 
     level: 90, 
     category: "Frontend",
-    icon: "devicon-html5-plain",
+    icon: HTML5,
     description: "Creating responsive, accessible and semantic markup with modern CSS techniques"
   },
   { 
     name: "Typescript", 
-    level: 60, 
+    level: 70, 
     category: "Frontend",
-    icon: "devicon-typescript-plain",
+    icon: TypeScript,
     description: "ES6+, async/await, DOM manipulation, and modern TS patterns"
   },
   { 
     name: "React", 
-    level: 50, 
+    level: 68, 
     category: "Frontend",
-    icon: "devicon-react-original",
+    icon: ReactDark,
     description: "Building complex UI with hooks, context API, and state management"
   },
   { 
     name: "Tailwind CSS", 
-    level: 70, 
+    level: 65, 
     category: "Frontend",
-    icon: "devicon-tailwindcss-plain",
+    icon: TailwindCSS,
     description: "Utility-first approach for rapid UI development with custom configurations"
   },
 
-  { name: "Next.js", 
-    level: 70, 
+  { name: "TanStack", 
+    level: 30, 
     category: "Frontend",
-    icon: "devicon-nextjs-plain",
+    icon: TanStack,
     description: "Utility-first approach for rapid UI development with custom configurations"
   },
 
   // Backend
   { 
     name: "Node.js", 
-    level: 50, 
+    level: 60, 
     category: "Backend",
-    icon: "devicon-nodejs-plain",
+    icon: Nodejs,
     description: "Server-side JavaScript, RESTful APIs, and microservices"
   },
    { 
     name: "Go", 
-    level: 10, 
+    level: 50, 
     category: "Backend",
-    icon: "devicon-go-plain",
+    icon: GoDark,
     description: "学習予定"
   },
    { 
     name: "Python", 
-    level: 10, 
+    level: 25, 
     category: "Backend",
-    icon: "devicon-python-plain",
+    icon: Python,
     description: "学習予定"
   },
   { 
     name: "Supabase", 
-    level: 65, 
+    level: 55, 
     category: "Backend",
-    icon: "devicon-supabase-plain",
+    icon: Supabase,
   },
 
   // Tools
   { 
     name: "Git/GitHub", 
-    level: 65, 
+    level: 72, 
     category: "Tools",
-    icon: "devicon-git-plain",
+    icon: Git,
     description: "Version control, collaborative workflows, and CI/CD integration"
   },
   { 
     name: "Figma", 
-    level: 40, 
+    level: 38, 
     category: "Tools",
-    icon: "devicon-figma-plain",
+    icon: Figma,
     description: "UI/UX design, prototyping, and design system management"
   },
   { 
     name: "VS Code", 
     level: 80, 
     category: "Tools",
-    icon: "devicon-vscode-plain",
+    icon: VisualStudioCode,
     description: "Advanced IDE customization, extensions, and productivity workflows"
   }, 
   { 
     name: "AWS", 
-    level: 20, 
+    level: 30, 
     category: "Tools",
-    icon: "devicon-amazonwebservices-plain",
+    icon: AmazonWebServicesDark,
   },
   { 
     name: "Docker", 
+    level: 65, 
+    category: "Tools",
+    icon: Docker,
+  },
+  { 
+    name: "Linux", 
+    level: 65, 
+    category: "Tools",
+    icon: Linux,
+  },
+  { 
+    name: "Z Shell", 
     level: 50, 
     category: "Tools",
-    icon: "devicon-docker-plain",
+    icon: BashDark,
+  },
+  { 
+    name: "Bun", 
+    level: 0, 
+    category: "Tools",
+    icon: Bun,
+  },
+  { 
+    name: "Terraform", 
+    level: 30, 
+    category: "Tools",
+    icon: Terraform,
   }
 ];
 
@@ -127,11 +157,6 @@ export const SkillsSection = () => {
   const sectionRef = useRef(null);
   
   useEffect(() => {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css';
-    document.head.appendChild(link);
-    
     AOS.init({ 
       duration: 1000, 
       once: true,
@@ -140,10 +165,6 @@ export const SkillsSection = () => {
     });
     
     setMounted(true);
-    
-    return () => {
-      document.head.removeChild(link);
-    };
   }, [setMounted]);
 
   const filteredSkills = skills.filter(
@@ -200,7 +221,7 @@ export const SkillsSection = () => {
       <div className="container mx-auto max-w-6xl z-10 relative bg-white/20 backdrop-blur-xl rounded-3xl p-8 border border-white/30 shadow-xl">
         <div className="flex flex-col md:flex-row justify-between items-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left text-white drop-shadow-lg ml-[25px]" data-aos="fade-right">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">My Technical Skills</span>
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-white to-white/70">My Technical Skills</span>
           </h2>
         </div>
 
@@ -241,7 +262,7 @@ export const SkillsSection = () => {
                     <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
-                          <i className={`${skill.icon} text-2xl mr-3 text-white/90`}></i>
+                          <skill.icon className="w-8 h-8 mr-3 text-white/90" />
                           <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
                       </div>
@@ -277,10 +298,10 @@ export const SkillsSection = () => {
                     )}
                     onClick={() => handleSkillClick(skill)}
                   >
-                    <div className="p-5">
+                   <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
-                          <i className={`${skill.icon} text-2xl mr-3 text-white/90`}></i>
+                          <skill.icon className="w-8 h-8 mr-3 text-white/90" />
                           <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
                       </div>
@@ -325,7 +346,7 @@ export const SkillsSection = () => {
                     <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
-                          <i className={`${skill.icon} text-2xl mr-3 text-white/90`}></i>
+                          <skill.icon className="w-8 h-8 mr-3 text-white/90" />
                           <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
                       </div>
@@ -363,7 +384,7 @@ export const SkillsSection = () => {
                     <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
-                          <i className={`${skill.icon} text-2xl mr-3 text-white/90`}></i>
+                          <skill.icon className="w-8 h-8 mr-3 text-white/90" />
                           <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
                       </div>
@@ -410,7 +431,7 @@ export const SkillsSection = () => {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-16 h-16 rounded-lg flex items-center justify-center bg-white/20 backdrop-blur-md border border-white/30">
-                    <i className={`${selectedSkill.icon} text-4xl text-white`}></i>
+                    <selectedSkill.icon className="w-10 h-10 text-white" />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white drop-shadow-lg">{selectedSkill.name}</h3>
@@ -448,12 +469,10 @@ export const SkillsSection = () => {
             </motion.div>
           )}
         </AnimatePresence>
-
-        
         </div>
 
       {/* CSS for scrolling animations */}
-      {`
+      <style>{`
         .skills-scroll-container {
           width: 100%;
           overflow: hidden;
@@ -493,8 +512,7 @@ export const SkillsSection = () => {
         /* Pause animations on hover */
         .skills-scroll-container:hover .skills-scroll-content {
           animation-play-state: paused;
-        }`
-      }
+      `}</style>
     </section>
   );
 };
