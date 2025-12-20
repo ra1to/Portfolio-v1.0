@@ -203,7 +203,7 @@ export const SkillsSection = () => {
   };
 
   return (
-    <section ref={sectionRef} id="skills" className="py-24 px-4 relative overflow-hidden" data-aos="fade-up">
+    <section ref={sectionRef} id="skills" className="py-24 " data-aos="fade-up">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-secondary/30 pointer-events-none">
         <div className="absolute inset-0 opacity-10">
@@ -218,7 +218,7 @@ export const SkillsSection = () => {
         </div>
       </div>
 
-      <div className="container mx-auto max-w-6xl z-10 relative bg-white/20 backdrop-blur-xl rounded-3xl p-8 border border-white/30 shadow-xl">
+      <div className="container mx-auto max-w-8xl z-10 relative bg-white/20 backdrop-blur-xl rounded-3xl p-5 border border-white/30 shadow-xl">
         <div className="flex flex-col md:flex-row justify-between items-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left text-white drop-shadow-lg ml-[25px]" data-aos="fade-right">
             <span className="bg-clip-text text-transparent bg-linear-to-r from-black to-black/70">My Technical Skills</span>

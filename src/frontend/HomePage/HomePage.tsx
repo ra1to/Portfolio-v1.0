@@ -21,7 +21,7 @@ export const HomePage = () => {
           堅牢性とメモリ効率を重視した開発を目指したい
         </h3>
 
-        <section className="w-full max-w-6xl mx-auto mb-8">
+        <section className="w-full max-w-[1320px] mx-auto mb-8">
           <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white shadow-xl">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold text-black uppercase">My Project</h2>
