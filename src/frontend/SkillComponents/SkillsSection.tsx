@@ -2,12 +2,12 @@ import { useState, useEffect, useRef } from "react";
 import { cn } from "../../lib/utils";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { motion, AnimatePresence } from "framer-motion";
 import { 
-  HTML5, TypeScript, ReactDark, TailwindCSS, TanStack, 
+  HTML5, TypeScript, ReactDark, TailwindCSS, TanStack,
   Nodejs,GoDark, Python, Supabase, Git, 
   Figma, VisualStudioCode, AmazonWebServicesDark, Docker, 
-  Linux, BashLight as BashDark, Bun , Terraform , CursorLight as Cursor,
+  Linux, Bun , Terraform , CursorLight as Cursor,
+  Kubernetes , GoogleCloud,Ubuntu,
 } from "@ridemountainpig/svgl-react";
 
 
@@ -17,7 +17,6 @@ interface Skill {
   level: number;
   category: "Frontend" | "Backend" | "Tools"; 
   icon: React.ElementType;
-  description?: string;
 }
 
 //スキル格納配列
@@ -28,60 +27,52 @@ const skills :Skill[] = [
     level: 90, 
     category: "Frontend",
     icon: HTML5,
-    description: "Creating responsive, accessible and semantic markup with modern CSS techniques"
   },
-  { 
+  {
     name: "Typescript", 
     level: 70, 
     category: "Frontend",
     icon: TypeScript,
-    description: "ES6+, async/await, DOM manipulation, and modern TS patterns"
   },
-  { 
+  {
     name: "React", 
     level: 68, 
     category: "Frontend",
     icon: ReactDark,
-    description: "Building complex UI with hooks, context API, and state management"
   },
-  { 
+  {
     name: "Tailwind", 
     level: 65, 
     category: "Frontend",
     icon: TailwindCSS,
-    description: "Utility-first approach for rapid UI development with custom configurations"
   },
-
-  { name: "TanStack", 
+  {
+    name: "TanStack", 
     level: 30, 
     category: "Frontend",
     icon: TanStack,
-    description: "Utility-first approach for rapid UI development with custom configurations"
   },
 
   // Backend
-  { 
+  {
     name: "Node.js", 
     level: 60, 
     category: "Backend",
     icon: Nodejs,
-    description: "Server-side JavaScript, RESTful APIs, and microservices"
   },
-   { 
+   {
     name: "Go", 
     level: 50, 
     category: "Backend",
     icon: GoDark,
-    description: "学習予定"
   },
-   { 
+   {
     name: "Python", 
     level: 25, 
     category: "Backend",
     icon: Python,
-    description: "学習予定"
   },
-  { 
+  {
     name: "Supabase", 
     level: 55, 
     category: "Backend",
@@ -89,69 +80,77 @@ const skills :Skill[] = [
   },
 
   // Tools
-  { 
+  {
     name: "Git/GitHub", 
     level: 72, 
     category: "Tools",
     icon: Git,
-    description: "Version control, collaborative workflows, and CI/CD integration"
   },
-  { 
+  {
     name: "Figma", 
     level: 38, 
     category: "Tools",
     icon: Figma,
-    description: "UI/UX design, prototyping, and design system management"
   },
-  { 
+  {
     name: "VS Code", 
     level: 80, 
     category: "Tools",
     icon: VisualStudioCode,
-    description: "Advanced IDE customization, extensions, and productivity workflows"
   }, 
-  { 
+  {
     name: "Cursor", 
-    level: 50, 
+    level: 60, 
     category: "Tools",
     icon: Cursor,
-    description: "Advanced IDE customization, extensions, and productivity workflows"
   }, 
-  { 
+  {
     name: "AWS", 
-    level: 30, 
+    level: 40, 
     category: "Tools",
     icon: AmazonWebServicesDark,
   },
-  { 
+  {
+    name: "G Cloud", 
+    level: 40, 
+    category: "Tools",
+    icon: GoogleCloud,
+  },
+  {
+    name: "Ubuntu", 
+    level: 40, 
+    category: "Tools",
+    icon: Ubuntu,
+  },
+  {
     name: "Docker", 
     level: 65, 
     category: "Tools",
     icon: Docker,
   },
-  { 
+  {
     name: "Linux", 
     level: 65, 
     category: "Tools",
     icon: Linux,
   },
-  { 
-    name: "Z Shell", 
-    level: 50, 
-    category: "Tools",
-    icon: BashDark,
-  },
-  { 
+  {
     name: "Bun", 
-    level: 0, 
+    level: 100, 
     category: "Tools",
     icon: Bun,
   },
-  { 
+  {
     name: "Terraform", 
     level: 30, 
     category: "Tools",
     icon: Terraform,
+  },
+  {
+    name: "Kubernetes", 
+    level: 30, 
+    category: "Tools",
+    icon: Kubernetes,
   }
 ];
 
@@ -159,7 +158,6 @@ const categories = ["All","Frontend", "Backend", "Tools"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
   const [,setMounted] = useState(false);
   const sectionRef = useRef(null);
   
@@ -184,10 +182,6 @@ export const SkillsSection = () => {
   // スキルを2つのスクロール行用に2つの配列に分割
   const firstRowSkills = [...sortedSkills];
   const secondRowSkills = [...sortedSkills];
-  
-  const handleSkillClick = (skill:Skill) => {
-    setSelectedSkill(selectedSkill?.name === skill.name ? null : skill);
-  };
   
   // レベルに基づいて進行状況の色を計算
   const getProgressColor = (level : number) => {
@@ -261,10 +255,8 @@ export const SkillsSection = () => {
                     className={cn(
                       "skills-card bg-white/20 backdrop-blur-md border border-white/30 rounded-xl overflow-hidden shadow-lg transition-all duration-300 mx-4",
                       "hover:shadow-xl hover:bg-white/30 hover:-translate-y-1",
-                      getCategoryStyle(skill.category),
-                      selectedSkill?.name === skill.name ? "ring-2 ring-primary" : ""
+                      getCategoryStyle(skill.category)
                     )}
-                    onClick={() => handleSkillClick(skill)}
                   >
                     <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
@@ -300,8 +292,7 @@ export const SkillsSection = () => {
                       "hover:shadow-xl hover:bg-white/30 hover:-translate-y-1",
                       getCategoryStyle(skill.category)
                     )}
-                    onClick={() => handleSkillClick(skill)}
-                  >
+                    >
                    <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
@@ -339,10 +330,8 @@ export const SkillsSection = () => {
                     className={cn(
                       "skills-card bg-white/20 backdrop-blur-md border border-white/30 rounded-xl overflow-hidden shadow-lg transition-all duration-300 mx-4",
                       "hover:shadow-xl hover:bg-white/30 hover:-translate-y-1",
-                      getCategoryStyle(skill.category),
-                      selectedSkill?.name === skill.name ? "ring-2 ring-primary" : ""
+                      getCategoryStyle(skill.category)
                     )}
-                    onClick={() => handleSkillClick(skill)}
                   >
                     <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
@@ -377,7 +366,6 @@ export const SkillsSection = () => {
                       "hover:shadow-xl hover:bg-white/30 hover:-translate-y-1",
                       getCategoryStyle(skill.category)
                     )}
-                    onClick={() => handleSkillClick(skill)}
                   >
                     <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
@@ -407,15 +395,6 @@ export const SkillsSection = () => {
           </div>
         </div>
 
-        {/* Skill details modal */}
-        <AnimatePresence>
-          {selectedSkill && (
-            <motion.div
-              animate={{ opacity: 1 }}
-            >
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
 
       {/* CSS for scrolling animations */}
