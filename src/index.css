@@ -10,58 +10,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-@theme {
-  --color-border: hsl(var(--border));
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-card: hsl(var(--card));
-}
 
 @layer base {
-  :root {
-    /* Neon Desert Light */
-    --background: 240 100% 10%;          /* Deep midnight blue */
-    --foreground: 0 0% 100%;             /* White text */
-    --card: 240 100% 15%;                /* Dark slate with glow contrast */
-    --primary: 200 100% 60%;             /* Electric blue (main neon) */
-    --primary-foreground: 0 0% 100%;     /* Bright white */
-    --border: 280 100% 75%;              /* Neon pink border */
-    --blur-amount: 0px;                  /* Background blur amount */
-  }
-
-  .dark {
-    /* Desert Night */
-    --background: 240 60% 5%; /* Midnight black */
-    --foreground: 45 20% 90%; /* Desert moonlight */
-    --card: 30 25% 15%; /* Slightly lighter sand */
-    --primary: 20 80% 50%; /* Desert sunset */
-    --primary-foreground: 0 0% 100%; /* White */
-    --border: 35 40% 30%; /* Rich clay border */
-  }
-
-  * {
-    @apply border-border;
-    color: white;
-  }
-
-  html {
-    @apply scroll-smooth;
-  }
-
-  body {
-    @apply bg-background text-foreground transition-colors duration-300;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    min-height: 100vh;
-    position: relative;
-  }
-
   body::before {
     content: '';
     position: fixed;
@@ -77,23 +27,6 @@ code {
     transform: scale(1.1);
     filter: blur(var(--blur-amount));
     z-index: -1;
-    transition: filter 0.3s ease-out;
+    transition: filter 0.5s ease-out;
   }
-
-
-  a {
-    @apply no-underline;
-  }
-}
-
-/* リンクのホバースタイルを確実に適用するため、baseレイヤーの外で定義 */
-a {
-  color: unset;
-}
-
-#root {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  text-align: center;
 }

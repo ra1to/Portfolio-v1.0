@@ -7,7 +7,7 @@ import {
   HTML5, TypeScript, ReactDark, TailwindCSS, TanStack, 
   Nodejs,GoDark, Python, Supabase, Git, 
   Figma, VisualStudioCode, AmazonWebServicesDark, Docker, 
-  Linux, BashDark, Bun , Terraform
+  Linux, BashLight as BashDark, Bun , Terraform , CursorLight as Cursor,
 } from "@ridemountainpig/svgl-react";
 
 
@@ -45,7 +45,7 @@ const skills :Skill[] = [
     description: "Building complex UI with hooks, context API, and state management"
   },
   { 
-    name: "Tailwind CSS", 
+    name: "Tailwind", 
     level: 65, 
     category: "Frontend",
     icon: TailwindCSS,
@@ -108,6 +108,13 @@ const skills :Skill[] = [
     level: 80, 
     category: "Tools",
     icon: VisualStudioCode,
+    description: "Advanced IDE customization, extensions, and productivity workflows"
+  }, 
+  { 
+    name: "Cursor", 
+    level: 50, 
+    category: "Tools",
+    icon: Cursor,
     description: "Advanced IDE customization, extensions, and productivity workflows"
   }, 
   { 
@@ -218,14 +225,14 @@ export const SkillsSection = () => {
         </div>
       </div>
 
-      <div className="container mx-auto max-w-8xl z-10 relative bg-white/20 backdrop-blur-xl rounded-3xl p-5 border border-white/30 shadow-xl">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-16">
+      <div className="container w-full max-w-[8xl] mx-auto z-10 relative bg-white/20 backdrop-blur-xl rounded-3xl p-5 border border-white/30 shadow-xl">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-10">
           <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left text-white drop-shadow-lg ml-[25px]" data-aos="fade-right">
             <span className="bg-clip-text text-transparent bg-linear-to-r from-black to-black/70">My Technical Skills</span>
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-16 ml-[25px]" data-aos="fade-up">
+        <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-10 ml-[25px]" data-aos="fade-up">
           {categories.map((category, index) => (
             <button
               key={index}
@@ -243,7 +250,7 @@ export const SkillsSection = () => {
           ))}
         </div>
         {/* Scrolling skills rows */}
-        <div className="mb-16 overflow-hidden" data-aos="fade-up">
+        <div className="overflow-hidden" data-aos="fade-up">
           {/* First row - scrolling right */}
           <div className="relative mb-8 py-4">
             <div className="skills-scroll-container skills-scroll-right">
@@ -262,8 +269,8 @@ export const SkillsSection = () => {
                     <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
-                          <skill.icon className="w-8 h-8 mr-3 text-white/90" />
-                          <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
+                          <skill.icon className="w-8 h-8 mr-3" />
+                          <h3 className="font-bold text-lg text-black drop-shadow-md">{skill.name}</h3>
                         </div>
                       </div>
                       
@@ -275,11 +282,8 @@ export const SkillsSection = () => {
                       </div>
                       
                       <div className="flex justify-between items-center">
-                        <span className="text-xs font-medium text-white/80 drop-shadow-sm">
+                        <span className="text-xs font-medium text-black drop-shadow-sm">
                           {skill.category}
-                        </span>
-                        <span className="text-sm font-semibold text-white drop-shadow-md">
-                          {skill.level}%
                         </span>
                       </div>
                     </div>
@@ -301,8 +305,8 @@ export const SkillsSection = () => {
                    <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
-                          <skill.icon className="w-8 h-8 mr-3 text-white/90" />
-                          <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
+                          <skill.icon className="w-8 h-8 mr-3" />
+                          <h3 className="font-bold text-lg text-black drop-shadow-md">{skill.name}</h3>
                         </div>
                       </div>
                       
@@ -314,11 +318,8 @@ export const SkillsSection = () => {
                       </div>
                       
                       <div className="flex justify-between items-center">
-                        <span className="text-xs font-medium text-white/80 drop-shadow-sm">
+                        <span className="text-xs font-medium text-black drop-shadow-sm">
                           {skill.category}
-                        </span>
-                        <span className="text-sm font-semibold text-white drop-shadow-md">
-                          {skill.level}%
                         </span>
                       </div>
                     </div>
@@ -346,8 +347,8 @@ export const SkillsSection = () => {
                     <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
-                          <skill.icon className="w-8 h-8 mr-3 text-white/90" />
-                          <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
+                          <skill.icon className="w-8 h-8 mr-3" />
+                          <h3 className="font-bold text-lg text-black drop-shadow-md">{skill.name}</h3>
                         </div>
                       </div>
                       
@@ -359,11 +360,8 @@ export const SkillsSection = () => {
                       </div>
                       
                       <div className="flex justify-between items-center">
-                        <span className="text-xs font-medium text-white/80 drop-shadow-sm">
+                        <span className="text-xs font-medium text-black drop-shadow-sm">
                           {skill.category}
-                        </span>
-                        <span className="text-sm font-semibold text-white drop-shadow-md">
-                          {skill.level}%
                         </span>
                       </div>
                     </div>
@@ -384,8 +382,8 @@ export const SkillsSection = () => {
                     <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
-                          <skill.icon className="w-8 h-8 mr-3 text-white/90" />
-                          <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
+                          <skill.icon className="w-8 h-8 mr-3" />
+                          <h3 className="font-bold text-lg text-black drop-shadow-md">{skill.name}</h3>
                         </div>
                       </div>
                       
@@ -397,11 +395,8 @@ export const SkillsSection = () => {
                       </div>
                       
                       <div className="flex justify-between items-center">
-                        <span className="text-xs font-medium text-white/80 drop-shadow-sm">
+                        <span className="text-xs font-medium text-black drop-shadow-sm">
                           {skill.category}
-                        </span>
-                        <span className="text-sm font-semibold text-white drop-shadow-md">
-                          {skill.level}%
                         </span>
                       </div>
                     </div>
@@ -416,60 +411,12 @@ export const SkillsSection = () => {
         <AnimatePresence>
           {selectedSkill && (
             <motion.div
-              initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/40 backdrop-blur-md z-50 flex items-center justify-center"
-              onClick={() => setSelectedSkill(null)}
             >
-              <motion.div
-                initial={{ scale: 0.9, y: 20 }}
-                animate={{ scale: 1, y: 0 }}
-                exit={{ scale: 0.9, y: 20 }}
-                className="bg-white/20 backdrop-blur-xl border border-white/30 rounded-xl p-6 max-w-md w-full mx-4 shadow-xl"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 rounded-lg flex items-center justify-center bg-white/20 backdrop-blur-md border border-white/30">
-                    <selectedSkill.icon className="w-10 h-10 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white drop-shadow-lg">{selectedSkill.name}</h3>
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm font-medium text-white/80 drop-shadow-sm">
-                        {selectedSkill.category}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="relative w-full h-3 rounded-full overflow-hidden bg-white/20 mb-3 backdrop-blur-sm border border-white/20">
-                  <div
-                    style={{ width: `${selectedSkill.level}%` }}
-                    className={`absolute top-0 left-0 h-full rounded-full bg-linear-to-r ${getProgressColor(selectedSkill.level)}`}
-                  />
-                </div>
-                
-                <div className="text-right mb-4">
-                  <span className="text-lg font-bold text-white drop-shadow-md">{selectedSkill.level}%</span>
-                </div>
-                
-                <div className="border-t border-white/30 pt-4">
-                  <h4 className="font-medium mb-2 text-white drop-shadow-md">Description</h4>
-                  <p className="text-white/90 drop-shadow-sm">{selectedSkill.description}</p>
-                </div>
-                
-                <button
-                  className="mt-6 w-full py-2 rounded-md border border-white/30 hover:bg-white/20 transition-colors text-white backdrop-blur-md bg-white/10"
-                  onClick={() => setSelectedSkill(null)}
-                >
-                  Close
-                </button>
-              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
-        </div>
+      </div>
 
       {/* CSS for scrolling animations */}
       <style>{`

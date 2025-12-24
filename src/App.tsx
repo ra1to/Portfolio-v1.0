@@ -16,7 +16,6 @@ function App () {
     };
 
     window.addEventListener('scroll', handleScroll);
-    // 初期状態も設定
     handleScroll();
 
     return () => {
@@ -26,9 +25,7 @@ function App () {
 
   return (
     <BrowserRouter>
-        <div className="App">
           <Header />
-        </div>
     </BrowserRouter>
   );
 }
