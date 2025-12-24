@@ -204,29 +204,17 @@ export const SkillsSection = () => {
   };
 
   return (
-    <section ref={sectionRef} id="skills" className="py-24 " data-aos="fade-up">
+    <div ref={sectionRef} id="skills" className="py-24 " data-aos="fade-up">
+      
       {/* Background pattern */}
-      <div className="absolute inset-0 bg-secondary/30 pointer-events-none">
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-            <defs>
-              <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid-pattern)" />
-          </svg>
-        </div>
-      </div>
-
       <div className="container w-full max-w-[8xl] mx-auto z-10 relative bg-white/20 backdrop-blur-xl rounded-3xl p-5 border border-white/30 shadow-xl">
         <div className="flex flex-col md:flex-row justify-between items-center mb-10">
-          <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left text-white drop-shadow-lg ml-[25px]" data-aos="fade-right">
+          <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left drop-shadow-lg" data-aos="fade-right">
             <span className="bg-clip-text text-transparent bg-linear-to-r from-black to-black/70">My Technical Skills</span>
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-10 ml-[25px]" data-aos="fade-up">
+        <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-10" data-aos="fade-up">
           {categories.map((category, index) => (
             <button
               key={index}
@@ -439,6 +427,6 @@ export const SkillsSection = () => {
         .skills-scroll-container:hover .skills-scroll-content {
           animation-play-state: paused;
       `}</style>
-    </section>
+    </div>
   );
 };

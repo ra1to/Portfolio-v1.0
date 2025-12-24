@@ -22,9 +22,9 @@ export const HomePage = () => {
         </h3>
 
         <section className="w-full max-w-[8xl] mx-auto mb-8">
-          <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white shadow-xl">
-            <div className="mb-8">
-              <h2 className="text-3xl font-bold text-black uppercase">My Project</h2>
+          <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-5 border border-white shadow-xl">
+            <div className="mb-8 text-left">
+              <h2 className="text-3xl ml-5px font-bold text-black uppercase">My Project</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="bg-white/40 backdrop-blur-md rounded-2xl p-6 border border-white/50 shadow-lg hover:bg-white/50 transition-all">
