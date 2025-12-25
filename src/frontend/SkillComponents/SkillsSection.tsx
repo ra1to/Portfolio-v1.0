@@ -111,7 +111,7 @@ const skills :Skill[] = [
     icon: AmazonWebServicesDark,
   },
   {
-    name: "G Cloud", 
+    name: "GCP", 
     level: 40, 
     category: "Tools",
     icon: GoogleCloud,

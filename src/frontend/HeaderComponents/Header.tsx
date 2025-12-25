@@ -54,7 +54,23 @@ export const Header = () => {
                 onClick={() => navigate(ROUTES.HOME)} 
                 className="text-black hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
               >
-                Home
+                About
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => navigate(ROUTES.HOME)} 
+                className="text-black hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
+              >
+                Skills
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => navigate(ROUTES.HOME)} 
+                className="text-black hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
+              >
+                Works
               </button>
             </li>
             <li>
@@ -72,7 +88,7 @@ export const Header = () => {
                 rel="noopener noreferrer"
                 className="text-black hover:text-[#48b4af]! transition-colors"
               >
-                SNS
+                Contact
               </a>
             </li>
           </ul>
