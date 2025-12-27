@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Route, Routes } from 'react-router-dom';
 import BlogPage from './BlogPage';
-import { HomePage } from '@/frontend/HomePage/HomePage';
+import { Home } from '@/frontend/HomePage/Home';
 
 // ルートパスの定義をHeaderコンポーネントに集約
 export const ROUTES = {
@@ -81,7 +81,7 @@ export const Header = () => {
 
       <main className="pt-28 md:px-12 lg:px-24 max-w-screen-2xl mx-auto min-h-screen">
         <Routes>
-          <Route path={ROUTES.HOME} element={<HomePage />} />
+          <Route path={ROUTES.HOME} element={<Home />} />
           <Route path={ROUTES.BLOG} element={<BlogPage />} />
         </Routes>
       </main>
