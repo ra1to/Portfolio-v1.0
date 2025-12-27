@@ -38,62 +38,55 @@ export const Header = () => {
           boxShadow: `0 10px 15px -3px rgba(0, 0, 0, ${0.1 * scrollProgress}), 0 4px 6px -4px rgba(0, 0, 0, ${0.1 * scrollProgress})`
         }}
       >
-        
-        <div className="logo">
-          <button 
-            onClick={() => navigate(ROUTES.HOME)} 
-            className="no-underline! bg-transparent border-none cursor-pointer p-0"
-          >
-            <h3 className="font-bold text-2xl text-black">Ra1to</h3>
-          </button>
-        </div>
-        <nav>
-          <ul className="flex gap-8 font-medium text-[20px]">
+
+        <nav className="w-full" >
+          <ul className="flex items-center justify-between px-10 font-medium text-[22px] text-bald">
             <li>
               <button 
                 onClick={() => navigate(ROUTES.HOME)} 
-                className="text-black hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
+                className="text-orange-200 hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
               >
-                About
+                ABOUT
               </button>
             </li>
             <li>
               <button 
                 onClick={() => navigate(ROUTES.HOME)} 
-                className="text-black hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
+                className="text-orange-200 hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
               >
-                Skills
+                SKILLS
               </button>
             </li>
             <li>
               <button 
                 onClick={() => navigate(ROUTES.HOME)} 
-                className="text-black hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
+                className="text-orange-200 hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
               >
-                Works
+                WORKS
               </button>
             </li>
+              <div className="text-white text-4xl">R</div>
             <li>
               <button 
                 onClick={() => navigate(ROUTES.BLOG)} 
-                className="text-black hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
+                className="text-orange-200 hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
               >
-                Blog
+                BLOG
               </button>
             </li>
             <li>
-              <a 
-                href="https://x.com/skyappsfree" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#48b4af]! transition-colors"
+            <button 
+                onClick={() => navigate(ROUTES.BLOG)} 
+                className="text-orange-300 hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
               >
-                Contact
-              </a>
+                CONTACT
+              </button>
             </li>
           </ul>
         </nav>
       </header>
+
+
       <main className="pt-28 md:px-12 lg:px-24 max-w-screen-2xl mx-auto min-h-screen">
         <Routes>
           <Route path={ROUTES.HOME} element={<HomePage />} />

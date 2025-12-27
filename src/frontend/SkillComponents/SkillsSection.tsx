@@ -1,13 +1,11 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { cn } from "../../lib/utils";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { 
   HTML5, TypeScript, ReactDark, TailwindCSS, TanStack,
-  Nodejs,GoDark, Python, Supabase, Git, 
+  Nodejs,GoLight, Python, Supabase, Git, 
   Figma, VisualStudioCode, AmazonWebServicesDark, Docker, 
   Linux, Bun , Terraform , CursorLight as Cursor,
-  Kubernetes , GoogleCloud,Ubuntu,
+  Kubernetes , GoogleCloud , Ubuntu , Vite, PostgreSQL,
 } from "@ridemountainpig/svgl-react";
 
 
@@ -24,25 +22,25 @@ const skills :Skill[] = [
   // Frontend
   {
     name: "HTML/CSS", 
-    level: 90, 
+    level: 95, 
     category: "Frontend",
     icon: HTML5,
   },
   {
     name: "Typescript", 
-    level: 70, 
+    level: 60, 
     category: "Frontend",
     icon: TypeScript,
   },
   {
     name: "React", 
-    level: 68, 
+    level: 75, 
     category: "Frontend",
     icon: ReactDark,
   },
   {
     name: "Tailwind", 
-    level: 65, 
+    level: 70, 
     category: "Frontend",
     icon: TailwindCSS,
   },
@@ -55,40 +53,40 @@ const skills :Skill[] = [
 
   // Backend
   {
-    name: "Node.js", 
+    name: "Express", 
     level: 60, 
     category: "Backend",
     icon: Nodejs,
   },
    {
     name: "Go", 
-    level: 50, 
+    level: 40, 
     category: "Backend",
-    icon: GoDark,
+    icon: GoLight,
   },
    {
     name: "Python", 
-    level: 25, 
+    level: 20, 
     category: "Backend",
     icon: Python,
-  },
-  {
-    name: "Supabase", 
-    level: 55, 
-    category: "Backend",
-    icon: Supabase,
   },
 
   // Tools
   {
     name: "Git/GitHub", 
-    level: 72, 
+    level: 80, 
     category: "Tools",
     icon: Git,
   },
   {
+    name: "Supabase", 
+    level: 60, 
+    category: "Tools",
+    icon: Supabase,
+  },
+  {
     name: "Figma", 
-    level: 38, 
+    level: 40, 
     category: "Tools",
     icon: Figma,
   },
@@ -112,7 +110,7 @@ const skills :Skill[] = [
   },
   {
     name: "GCP", 
-    level: 40, 
+    level: 25, 
     category: "Tools",
     icon: GoogleCloud,
   },
@@ -130,7 +128,7 @@ const skills :Skill[] = [
   },
   {
     name: "Linux", 
-    level: 65, 
+    level: 70, 
     category: "Tools",
     icon: Linux,
   },
@@ -141,16 +139,28 @@ const skills :Skill[] = [
     icon: Bun,
   },
   {
+    name: "Vite", 
+    level: 100, 
+    category: "Tools",
+    icon: Vite,
+  },
+  {
     name: "Terraform", 
-    level: 30, 
+    level: 25, 
     category: "Tools",
     icon: Terraform,
   },
   {
     name: "Kubernetes", 
-    level: 30, 
+    level: 10, 
     category: "Tools",
     icon: Kubernetes,
+  },
+  {
+    name: "PostgreSQL", 
+    level: 40, 
+    category: "Tools",
+    icon: PostgreSQL,
   }
 ];
 
@@ -158,20 +168,8 @@ const categories = ["All","Frontend", "Backend", "Tools"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [,setMounted] = useState(false);
   const sectionRef = useRef(null);
   
-  useEffect(() => {
-    AOS.init({ 
-      duration: 1000, 
-      once: true,
-      mirror: false,
-      easing: 'ease-out-cubic'
-    });
-    
-    setMounted(true);
-  }, [setMounted]);
-
   const filteredSkills = skills.filter(
     (skill) => activeCategory === "All" || skill.category === activeCategory
   );
@@ -204,17 +202,17 @@ export const SkillsSection = () => {
   };
 
   return (
-    <div ref={sectionRef} id="skills" className="py-24 " data-aos="fade-up">
+    <div ref={sectionRef} id="skills" className="py-24 ">
       
       {/* Background pattern */}
       <div className="container w-full max-w-[8xl] mx-auto z-10 relative bg-white/20 backdrop-blur-xl rounded-3xl p-5 border border-white/30 shadow-xl">
         <div className="flex flex-col md:flex-row justify-between items-center mb-10">
-          <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left drop-shadow-lg" data-aos="fade-right">
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-black to-black/70">My Technical Skills</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left drop-shadow-lg">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-white to-white">My Technical Skills</span>
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-10" data-aos="fade-up">
+        <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-10">
           {categories.map((category, index) => (
             <button
               key={index}
@@ -231,9 +229,7 @@ export const SkillsSection = () => {
             </button>
           ))}
         </div>
-        {/* Scrolling skills rows */}
-        <div className="overflow-hidden" data-aos="fade-up">
-          {/* First row - scrolling right */}
+        <div className="overflow-hidden">
           <div className="relative mb-8 py-4">
             <div className="skills-scroll-container skills-scroll-right">
               <div className="skills-scroll-content">
@@ -242,7 +238,7 @@ export const SkillsSection = () => {
                     key={`row1-${skill.name}`}
                     className={cn(
                       "skills-card bg-white/20 backdrop-blur-md border border-white/30 rounded-xl overflow-hidden shadow-lg transition-all duration-300 mx-4",
-                      "hover:shadow-xl hover:bg-white/30 hover:-translate-y-1",
+                      "hover:shadow-xl hover:bg-white/30",
                       getCategoryStyle(skill.category)
                     )}
                   >
@@ -250,7 +246,7 @@ export const SkillsSection = () => {
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
                           <skill.icon className="w-8 h-8 mr-3" />
-                          <h3 className="font-bold text-lg text-black drop-shadow-md">{skill.name}</h3>
+                          <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
                       </div>
                       
@@ -262,7 +258,7 @@ export const SkillsSection = () => {
                       </div>
                       
                       <div className="flex justify-between items-center">
-                        <span className="text-xs font-medium text-black drop-shadow-sm">
+                        <span className="text-xs font-medium text-white drop-shadow-sm">
                           {skill.category}
                         </span>
                       </div>
@@ -270,14 +266,13 @@ export const SkillsSection = () => {
                   </div>
                 ))}
                 
-                {/* Duplicate skills to ensure continuous scrolling */}
+                {/* 複製したskillカード */}
                 {firstRowSkills.map((skill) => (
                   <div
                     key={`row1-dupe-${skill.name}`}
                     className={cn(
                
                       "skills-card bg-white/20 backdrop-blur-md border border-white/30 rounded-xl overflow-hidden shadow-lg transition-all duration-300 mx-4",
-                      "hover:shadow-xl hover:bg-white/30 hover:-translate-y-1",
                       getCategoryStyle(skill.category)
                     )}
                     >
@@ -285,7 +280,7 @@ export const SkillsSection = () => {
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
                           <skill.icon className="w-8 h-8 mr-3" />
-                          <h3 className="font-bold text-lg text-black drop-shadow-md">{skill.name}</h3>
+                          <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
                       </div>
                       
@@ -297,7 +292,7 @@ export const SkillsSection = () => {
                       </div>
                       
                       <div className="flex justify-between items-center">
-                        <span className="text-xs font-medium text-black drop-shadow-sm">
+                        <span className="text-xs font-medium text-white drop-shadow-sm">
                           {skill.category}
                         </span>
                       </div>
@@ -308,7 +303,7 @@ export const SkillsSection = () => {
             </div>
           </div>
           
-          {/* Second row - scrolling left */}
+          {/* 左から右スクロール */}
           <div className="relative py-4">
             <div className="skills-scroll-container skills-scroll-left">
               <div className="skills-scroll-content">
@@ -317,7 +312,7 @@ export const SkillsSection = () => {
                     key={`row2-${skill.name}`}
                     className={cn(
                       "skills-card bg-white/20 backdrop-blur-md border border-white/30 rounded-xl overflow-hidden shadow-lg transition-all duration-300 mx-4",
-                      "hover:shadow-xl hover:bg-white/30 hover:-translate-y-1",
+                      "hover:shadow-xl hover:bg-white/30",
                       getCategoryStyle(skill.category)
                     )}
                   >
@@ -325,7 +320,7 @@ export const SkillsSection = () => {
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
                           <skill.icon className="w-8 h-8 mr-3" />
-                          <h3 className="font-bold text-lg text-black drop-shadow-md">{skill.name}</h3>
+                          <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
                       </div>
                       
@@ -337,7 +332,7 @@ export const SkillsSection = () => {
                       </div>
                       
                       <div className="flex justify-between items-center">
-                        <span className="text-xs font-medium text-black drop-shadow-sm">
+                        <span className="text-xs font-medium text-white drop-shadow-sm">
                           {skill.category}
                         </span>
                       </div>
@@ -345,13 +340,13 @@ export const SkillsSection = () => {
                   </div>
                 ))}
                 
-                {/* Duplicate skills to ensure continuous scrolling */}
+                {/* 2列目の初期値設定 */}
                 {secondRowSkills.map((skill) => (
                   <div
                     key={`row2-dupe-${skill.name}`}
                     className={cn(
-                      "skills-card bg-white/20 backdrop-blur-md border border-white/30 rounded-xl overflow-hidden shadow-lg transition-all duration-300 mx-4",
-                      "hover:shadow-xl hover:bg-white/30 hover:-translate-y-1",
+                      "skills-card border border-white/30 rounded-xl overflow-hidden shadow-lg transition-all duration-300 mx-4",
+                      "hover:bg-white/30",
                       getCategoryStyle(skill.category)
                     )}
                   >
@@ -359,7 +354,8 @@ export const SkillsSection = () => {
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
                           <skill.icon className="w-8 h-8 mr-3" />
-                          <h3 className="font-bold text-lg text-black drop-shadow-md">{skill.name}</h3>
+                          {/* 2列目スクロールの初期文字色*/}
+                          <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
                       </div>
                       
@@ -371,7 +367,8 @@ export const SkillsSection = () => {
                       </div>
                       
                       <div className="flex justify-between items-center">
-                        <span className="text-xs font-medium text-black drop-shadow-sm">
+                        {/* 2列目スクロールの初期カテゴリーの文字色*/}
+                        <span className="text-xs font-medium text-white drop-shadow-sm">
                           {skill.category}
                         </span>
                       </div>
