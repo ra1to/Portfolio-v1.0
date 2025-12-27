@@ -57,6 +57,7 @@ export const Header = () => {
                 SKILLS
               </button>
             </li>
+              <div className="text-white text-4xl">R</div>
             <li>
               <button 
                 onClick={() => navigate(ROUTES.HOME)} 
@@ -65,21 +66,12 @@ export const Header = () => {
                 WORKS
               </button>
             </li>
-              <div className="text-white text-4xl">R</div>
             <li>
               <button 
                 onClick={() => navigate(ROUTES.BLOG)} 
                 className="text-orange-200 hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
               >
                 BLOG
-              </button>
-            </li>
-            <li>
-            <button 
-                onClick={() => navigate(ROUTES.BLOG)} 
-                className="text-orange-300 hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
-              >
-                CONTACT
               </button>
             </li>
           </ul>
