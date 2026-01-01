@@ -30,7 +30,7 @@ export const Header = () => {
   return (
     <>
       <header 
-        className="fixed top-0 w-full z-50 h-22 flex justify-between items-center px-55"
+        className="fixed top-0 w-full z-50 h-22 flex justify-between items-center px-55 pt-3"
         style={{
           backgroundColor: `rgba(255, 255, 255, ${0.6 * scrollProgress})`,
           backdropFilter: `blur(${20 * scrollProgress}px)`,

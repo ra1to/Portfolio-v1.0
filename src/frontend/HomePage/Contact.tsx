@@ -32,8 +32,8 @@ const socialData: SocialItem[] = [
   { 
     name: 'GitHub', 
     icon: GitHub,  
-    beforeBg: 'group-hover:before:bg-[#000000]', 
-    afterBg: 'group-hover:after:bg-[#696969]' 
+    beforeBg: 'group-hover:before:bg-black', 
+    afterBg: 'group-hover:after:bg-gray-500' 
   },
 ];
 
