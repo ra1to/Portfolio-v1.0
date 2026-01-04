@@ -41,6 +41,8 @@ export const Header = () => {
 
         <nav className="w-full" >
           <ul className="flex items-center justify-between px-10 font-medium text-[22px] text-bald">
+            
+            {/* ABOUT */}
             <li>
               <button 
                 onClick={() => navigate(ROUTES.HOME)} 
@@ -49,6 +51,8 @@ export const Header = () => {
                 ABOUT
               </button>
             </li>
+
+            {/* SKILLS */}
             <li>
               <button 
                 onClick={() => navigate(ROUTES.HOME)} 
@@ -57,21 +61,34 @@ export const Header = () => {
                 SKILLS
               </button>
             </li>
-              <div className="text-white text-4xl">R</div>
+
+            {/* WORKS */}
             <li>
-              <button 
+              <button
                 onClick={() => navigate(ROUTES.HOME)} 
                 className="text-orange-200 hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
               >
                 WORKS
               </button>
             </li>
+            
+            {/* BLOG */}
             <li>
               <button 
                 onClick={() => navigate(ROUTES.BLOG)} 
                 className="text-orange-200 hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
               >
                 BLOG
+              </button>
+            </li>
+            
+            {/* CONTACT */}
+            <li>
+              <button 
+                onClick={() => navigate(ROUTES.BLOG)} 
+                className="text-orange-200 hover:text-[#48b4af]! transition-colors bg-transparent border-none cursor-pointer p-0 font-medium text-[20px]"
+              >
+                CONTACT
               </button>
             </li>
           </ul>
