@@ -122,7 +122,9 @@ export const About = () => {
                         <source src="https://pub-54be2b8a62994395b141afdc5ee888ae.r2.dev/redpandacompress_1228.mp4" type="video/mp4" />
                     </video>
                 </div>
-                <div className="text-[25px] text-white/70 mt-[50px]">スマホ撮影なのでご愛嬌で</div>
+                <div className="text-[20px] text-white/70 mt-[30px] text-left">沖縄にいた頃、高校最後の夏休みに友達と３日かけたやつ<br/>
+                                                                                スマホ撮影なので画質が悪いのはご愛嬌で
+                </div>
             </div>
         </div>
     );
