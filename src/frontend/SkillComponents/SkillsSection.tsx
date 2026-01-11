@@ -1,20 +1,22 @@
 import { useState, useRef } from "react";
 import { cn } from "../../lib/utils";
+import "devicon/devicon.min.css"; // deviconのCSSをインポート
 import { 
   HTML5, TypeScript, ReactDark, TailwindCSS, TanStack,
-  Nodejs,GoLight, Python, Supabase, Git, 
+  Python, Supabase, Git, 
   Figma, VisualStudioCode, AmazonWebServicesDark, Docker, 
-  Linux, Bun , Terraform , CursorLight as Cursor,
-  Kubernetes , GoogleCloud , Ubuntu , Vite, PostgreSQL,
+  Linux,  Terraform , CursorLight as Cursor,
+  Kubernetes , GoogleCloud , Ubuntu ,  PostgreSQL,
 } from "@ridemountainpig/svgl-react";
-
 
 
 interface Skill {
   name: string;
   level: number;
   category: "Frontend" | "Backend" | "Tools"; 
-  icon: React.ElementType;
+  icon?: React.ElementType; // @ridemountainpig/svgl-reactのコンポーネント
+  deviconClass?: string; // deviconのCSSクラス名（例: "devicon-react-original"）
+  deviconSvg?: string; // deviconのSVGファイルパス（例: "devicon/icons/nodejs/nodejs-original.svg"）
 }
 
 //スキル格納配列
@@ -53,16 +55,16 @@ const skills :Skill[] = [
 
   // Backend
   {
-    name: "Express", 
+    name: "Node.js", 
     level: 60, 
     category: "Backend",
-    icon: Nodejs,
+    deviconClass: "devicon-nodejs-line-wordmark"
   },
    {
     name: "Go", 
     level: 40, 
     category: "Backend",
-    icon: GoLight,
+    deviconClass:"devicon-go-plain colored",
   },
    {
     name: "Python", 
@@ -115,34 +117,16 @@ const skills :Skill[] = [
     icon: GoogleCloud,
   },
   {
-    name: "Ubuntu", 
-    level: 40, 
-    category: "Tools",
-    icon: Ubuntu,
-  },
-  {
     name: "Docker", 
     level: 65, 
     category: "Tools",
-    icon: Docker,
+    deviconClass:  "devicon-docker-plain colored",
   },
   {
     name: "Linux", 
     level: 70, 
     category: "Tools",
     icon: Linux,
-  },
-  {
-    name: "Bun", 
-    level: 100, 
-    category: "Tools",
-    icon: Bun,
-  },
-  {
-    name: "Vite", 
-    level: 100, 
-    category: "Tools",
-    icon: Vite,
   },
   {
     name: "Terraform", 
@@ -165,6 +149,23 @@ const skills :Skill[] = [
 ];
 
 const categories = ["All","Frontend", "Backend", "Tools"];
+
+// アイコンを表示するヘルパー関数
+const renderIcon = (skill: Skill) => {
+  if (skill.deviconSvg) {
+    // deviconのSVGファイルを使用する場合
+    const svgPath = new URL(`../../../../node_modules/devicon/icons/${skill.deviconSvg}`, import.meta.url).href;
+    return <img src={svgPath} alt={skill.name} className="w-8 h-8 mr-3" />;
+  } else if (skill.deviconClass) {
+    // deviconのCSSクラスを使用する場合
+    return <i className={cn("w-8 h-8 mr-3", skill.deviconClass)}></i>;
+  } else if (skill.icon) {
+    // @ridemountainpig/svgl-reactを使用する場合
+    const IconComponent = skill.icon;
+    return <IconComponent className="w-8 h-8 mr-3" />;
+  }
+  return null;
+};
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -245,7 +246,7 @@ export const SkillsSection = () => {
                     <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
-                          <skill.icon className="w-8 h-8 mr-3" />
+                          {renderIcon(skill)}
                           <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
                       </div>
@@ -279,7 +280,7 @@ export const SkillsSection = () => {
                    <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
-                          <skill.icon className="w-8 h-8 mr-3" />
+                          {renderIcon(skill)}
                           <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
                       </div>
@@ -319,7 +320,7 @@ export const SkillsSection = () => {
                     <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
-                          <skill.icon className="w-8 h-8 mr-3" />
+                          {renderIcon(skill)}
                           <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
                       </div>
@@ -353,7 +354,7 @@ export const SkillsSection = () => {
                     <div className="p-5">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center">
-                          <skill.icon className="w-8 h-8 mr-3" />
+                          {renderIcon(skill)}
                           {/* 2列目スクロールの初期文字色*/}
                           <h3 className="font-bold text-lg text-white drop-shadow-md">{skill.name}</h3>
                         </div>
