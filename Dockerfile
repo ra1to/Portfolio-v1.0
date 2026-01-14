@@ -17,4 +17,3 @@ COPY . /app
 # このポートは公開ポート（EXPOSE）としてマークされますが、
 # 外部公開は docker-compose.yml で行います。
 EXPOSE 3000
-EXPOSE 6006
