@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://vite.dev/config/
 import path from 'node:path';
 
-// More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
+
 export default defineConfig({
   plugins: [tailwindcss(), react()],
   test: {
@@ -14,7 +14,6 @@ export default defineConfig({
       extends: true,
       plugins: [],
       test: {
-        name: 'storybook',
         browser: {
           enabled: true,
           headless: true,
@@ -23,7 +22,6 @@ export default defineConfig({
             browser: 'chromium'
           }]
         },
-        setupFiles: ['.storybook/vitest.setup.ts']
       }
     }]
   },

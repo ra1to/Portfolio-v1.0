@@ -4,7 +4,7 @@ import BlogPage from './BlogPage';
 import { Home } from '@/frontend/HomePage/Home';
 
 // ルートパスの定義をHeaderコンポーネントに集約
-export const ROUTES = {
+const ROUTES = {
   HOME: '/',
   BLOG: '/blog',
 } as const;

@@ -3,10 +3,10 @@ import { cn } from "../../lib/utils";
 import "devicon/devicon.min.css"; // deviconのCSSをインポート
 import { 
   HTML5, TypeScript, ReactDark, TailwindCSS, TanStack,
-  Python, Supabase, Git, 
-  Figma, VisualStudioCode, AmazonWebServicesDark, Docker, 
+  Python, Supabase, Git,
+  Figma, VisualStudioCode, AmazonWebServicesDark,
   Linux,  Terraform , CursorLight as Cursor,
-  Kubernetes , GoogleCloud , Ubuntu ,  PostgreSQL,
+  GoogleCloud, PostgreSQL,
 } from "@ridemountainpig/svgl-react";
 
 
@@ -133,12 +133,6 @@ const skills :Skill[] = [
     level: 25, 
     category: "Tools",
     icon: Terraform,
-  },
-  {
-    name: "Kubernetes", 
-    level: 10, 
-    category: "Tools",
-    icon: Kubernetes,
   },
   {
     name: "PostgreSQL", 

@@ -96,7 +96,7 @@ export const About = () => {
                             塞翁が馬 / 初志貫徹
                         </div>
                     </div>
-                    {/*　出身 */}
+                    {/* 出身 */}
                     <div className="flex items-center">
                         <div className="text-[20px] text-white text-left w-[150px] shrink">
                         🌺出身

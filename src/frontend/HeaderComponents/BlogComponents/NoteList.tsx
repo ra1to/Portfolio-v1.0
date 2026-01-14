@@ -31,7 +31,7 @@ export const NoteList = () => {
         
         if (data.status === 'ok') {
           const articles = data.items.slice(0, 6);
-          let thumbnailMap: Record<string, string> = {};
+          const thumbnailMap: Record<string, string> = {};
           try {
             const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`;
             const proxyRes = await fetch(proxyUrl);
