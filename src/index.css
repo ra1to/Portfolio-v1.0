@@ -1,4 +1,4 @@
-@import "tw-animate-css"; 
+@import "tw-animate-css";
 @import "tailwindcss";
 
 body {
@@ -19,7 +19,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('./Image/Back.png');
+    background-image: url('./Image/BackPhoto.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

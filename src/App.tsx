@@ -1,4 +1,3 @@
-import './App.css';
 import { Header } from '@/frontend/HeaderComponents/Header';
 import { BrowserRouter } from 'react-router-dom';
 import { useEffect } from 'react';
